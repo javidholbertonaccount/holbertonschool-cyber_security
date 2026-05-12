@@ -7,23 +7,23 @@ fi
 case "$1" in
     start)
         ./manage_my_process &
-        echo $! > /var/run/my_process.pid
+        echo $! > /tmp/my_process.pid
         echo "manage_my_process started"
         ;;
     stop)
-        if [ -f /var/run/my_process.pid ]; then
-            kill "$(cat /var/run/my_process.pid)"
-            rm -f /var/run/my_process.pid
+        if [ -f /tmp/my_process.pid ]; then
+            kill "$(cat /tmp/my_process.pid)"
+            rm -f /tmp/my_process.pid
         fi
         echo "manage_my_process stopped"
         ;;
     restart)
-        if [ -f /var/run/my_process.pid ]; then
-            kill "$(cat /var/run/my_process.pid)"
-            rm -f /var/run/my_process.pid
+        if [ -f /tmp/my_process.pid ]; then
+            kill "$(cat /tmp/my_process.pid)"
+            rm -f /tmp/my_process.pid
         fi
         ./manage_my_process &
-        echo $! > /var/run/my_process.pid
+        echo $! > /tmp/my_process.pid
         echo "manage_my_process restarted"
         ;;
     *)
