@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Handles various signals
 echo $$ > /tmp/myscript.pid
 trap 'echo "Y U no love me?!"' SIGINT
 trap 'echo "I hate the kill command"; rm -f /tmp/myscript.pid; exit 0' SIGTERM
