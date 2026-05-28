@@ -1,1 +1,1 @@
-# 0x00. Linux security basics
+# 0x00. Linux Security Basics
