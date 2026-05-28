@@ -1,2 +1,2 @@
 #!/bin/bash
-find "$1" -user user2 -exec chown user3 {} \;
+chown --from=user2 user3 -R "$1"
