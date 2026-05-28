@@ -1,2 +1,2 @@
-#!/bin/bash
-sudo nmap -sn "
+#!/usr/bin/env bash
+sudo nmap $1
